@@ -2,19 +2,101 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=devicce-width, initial-scale=1.0">
 <title>Periódico El Faro - Deporte</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    
 <style>
-body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
-header { background: white; text-align: center; padding: 20px; border-bottom: 1px solid #ddd; }
-nav { text-align: center; padding: 10px; background: #222; }
-nav a { color: white; margin: 0 15px; text-decoration: none; }
-main { width: 90%; max-width: 1000px; margin: auto; }
-section { background: white; margin: 20px 0; padding: 20px; border-radius: 5px; }
-table { width: 100%; border-collapse: collapse; }
-td { border: 1px solid #ddd; padding: 15px; }
-em { color: gray; }
-footer { text-align: center; padding: 20px; background: #222; color: white; }
+/* ESTILO GENERAL */
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    background: #f5f5f5;
+}
+
+/* HEADER */
+header {
+    background: white;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+header img {
+    max-width: 200px;
+}
+
+/*NAV*/
+nav { 
+    text-align: center;
+    padding: 10px; 
+    background: #222;
+}
+    
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: underline;
+}
+
+nav a: hover {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*CONTENIDO*/
+    
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/*GRILLA*/
+
+.noticias {
+    display; grid;
+    grid-template-columns:repeat(2,1fr);
+    gap: 20px;
+}
+
+/*ARTÍCULOS*/
+
+article {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    line-height: 1,6;
+}
+
+article: hover {
+    background: black:
+    color: white;
+
+/*FOOTER*/
+footer {
+    background: #c9d2d0;
+    color: #321231e;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/*RESPONSIVE*/
+
+@media (max-width: 768px){
+    .noticias {
+        grid-template-columns: 1fr;
+    }
+
+nav a {
+    display: block;
+    margin: 10px 0;
+}
+}
+
 </style>
 
 </head>
@@ -37,7 +119,7 @@ footer { text-align: center; padding: 20px; background: #222; color: white; }
 <section>
 <h2>Deporte</h2>
 
-<table>
+<article>
 <tr><td>
 <h3>Fútbol chileno: Ben Brereton aumentó su registro goleador jugando con La Roja en el duelo ante Cabo Verde</h3>
 <p><em>Deporte</em></p>
@@ -50,8 +132,10 @@ Ese tanto le permitió a Brereton llegar a 10 gritos sagrados con La Roja (6 de 
 De esta manera, el ariete sigue aumentando su cuota goleadora defendiendo a Chile.
 
 </p>
+</article>
 </td></tr>
 
+<article>
 <tr><td>
 <h3>Tenis internacional: Miami Open finaliza con Aryna Sabalenka como su ganadora</h3>
 <p><em>Deporte</em></p>
@@ -62,8 +146,10 @@ De esta manera, el ariete sigue aumentando su cuota goleadora defendiendo a Chil
 4-6 y 6-3 en la final del Miami Open para conquistar su decimoprimer WTA 1000 y adueñarse del Sunshine Double, tras el título que consiguió recientemente en Indian Wells.
 Esta es la primer final que pierde Gauff sobre canchas duras. La estadounidense había llegado a Florida con un categórico 9-0 en este rubro tras sus consagraciones en Linz (2019),
 Auckland (2023), Washington (2023), Cincinnati (2023), US Open (2023), Auckland (2024), Beijing (2024), WTA Finals (2024), Wuhan (2025).</p>
+</article>
 </td></tr>
 
+<article>
 <tr><td>
 <h3>Juegos Olímpicos</h3>
 <p><em>Internacional: MLBPA: huelga en 2027 podría afectar a los Juegos Olímpicos </em></p>
@@ -75,6 +161,7 @@ participen en los Juegos Olímpicos de Los Ángeles 2028. Los seguros y las cond
 jugadores de la MLB puedan participar en los Juegos Olímpicos. En el Clásico Mundial de Beisbol, los costos se dividen proporcionalmente entre los accionistas: la MLB y el 
 sindicato tienen participaciones iguales, que son las mayores, y la WBSC, la Liga Japonesa de Beisbol Profesional y la Organización Coreana de Beisbol también poseen participaciones 
 minoritarias.</p>
+</article>
 </td></tr>
 </table>
 
