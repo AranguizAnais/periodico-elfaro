@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <title>Periódico El Faro - Inicio</title>
 
-<!-- ================= TIPOGRAFÍA EXTERNA ================= -->
+<!-- CONFIGURACIÓN QUE SE ADAPTA A USO EN CELULAR -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<!-- TIPOGRAFÍA EXTERNA -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== ESTILO GENERAL ===== */
+/*  ESTILO GENERAL */
 body {
     font-family: 'Poppins', sans-serif; /* Tipografía externa */
     margin: 0;
@@ -24,17 +27,21 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-/* ===== MENÚ ===== */
+header img {
+    max-width: 200px;
+}
+/*  MENÚ  */
 nav {
     background: #222;
     text-align: center;
     padding: 10px;
 }
 
+/*LINKS*/    
 nav a {
     color: white;
     margin: 0 15px;
-    text-decoration: underline; /* subrayado normal */
+    text-decoration: underline;
 }
 
 /* Hover en links */
@@ -57,7 +64,7 @@ h2 {
 
 /* ===== GRILLA DE NOTICIAS ===== */
 .noticias {
-    display: grid; /* Uso de CSS Grid (requisito) */
+    display: grid; 
     grid-template-columns: repeat(2, 1fr); /* 2 columnas */
     gap: 20px;
 }
@@ -81,7 +88,6 @@ article:hover {
 article img {
     width: 100%;
     border-radius: 5px;
-    margin: 10px 0;
 }
 
 /* Multimedia */
@@ -105,6 +111,28 @@ footer {
         grid-template-columns: 1fr; /* 1 columna en celular */
     }
 }
+    nav a {
+        display: block;
+        margin: 10px 0
+    }
+    }
+/* EN CASO DE SER UN CELULAR MÁS PEQUEÑO */
+    @media (maxwidth: 480px){
+
+        header img{
+            max-width: 150px;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        h2 {
+            font-size: 18px;
+        }
+        article {
+            padding: 15px
+        }
+    }
+    
 
 </style>
 </head>
