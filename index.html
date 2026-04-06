@@ -28,7 +28,7 @@ header {
 }
 
 header img {
-    max-width: 200px;
+    max-width: 200px; /*al darle este tamaño la imagen se adapta*/
 }
 /*  MENÚ  */
 nav {
@@ -45,7 +45,7 @@ nav a {
 }
 
 /* Hover en links */
-nav a:hover {
+nav a: hover {
     font-weight: bold;
     text-decoration: none;
 }
@@ -65,7 +65,7 @@ h2 {
 /* GRILLA DE NOTICIAS */
 .noticias {
     display: grid; 
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-columns: repeat(2, 1fr); /* línea que indica la existencia de 2 columnas */
     gap: 20px;
 }
 
@@ -79,7 +79,7 @@ article {
 }
 
 /* Hover artículos */
-article:hover {
+article: hover {
     background: black;
     color: white;
 }
@@ -108,7 +108,7 @@ footer {
 /* RESPONSIVE  */
 @media (max-width: 768px) {
     .noticias {
-        grid-template-columns: 1fr; /* 1 columna en celular */
+        grid-template-columns: 1fr; /* línea que indica la existencia de 1 columna en celular */
     }
 }
     nav a {
