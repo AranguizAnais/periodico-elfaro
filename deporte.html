@@ -2,88 +2,136 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Periódico El Faro - Deporte</title>
+<title>Deporte</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 <style>
-body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
-header { background: white; text-align: center; padding: 20px; border-bottom: 1px solid #ddd; }
-nav { text-align: center; padding: 10px; background: #222; }
-nav a { color: white; margin: 0 15px; text-decoration: none; }
-main { width: 90%; max-width: 1000px; margin: auto; }
-section { background: white; margin: 20px 0; padding: 20px; border-radius: 5px; }
-table { width: 100%; border-collapse: collapse; }
-td { border: 1px solid #ddd; padding: 15px; }
-em { color: gray; }
-footer { text-align: center; padding: 20px; background: #222; color: white; }
-</style>
 
+/* Estilo general */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+header {
+  background: white;
+  text-align: center;
+  padding: 20px;
+}
+
+nav {
+  background: #222;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: underline;
+}
+
+nav a: hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+/* GRID */
+.contenedor-articulos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.articulo {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.articulo:hover {
+  background: black;
+  color: white;
+}
+
+footer {
+  background: #c9d2d0;
+  color: #31231e;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .contenedor-articulos {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <img src="faro.png" width="300">
-    <h1>Periódico El Faro</h1>
+  <img src="faro.png" width="300">
+  <h1>Periódico El Faro</h1>
 </header>
 
 <nav>
-    <a href="index.html">Inicio</a>
-    <a href="deporte.html">Deporte</a>
-    <a href="negocios.html">Negocios</a>
+  <a href="index.html">Inicio</a>
+  <a href="deporte.html">Deporte</a>
+  <a href="negocios.html">Negocios</a>
 </nav>
 
 <main>
 
-<section>
 <h2>Deporte</h2>
 
-<table>
-<tr><td>
-<h3>Fútbol chileno: Ben Brereton aumentó su registro goleador jugando con La Roja en el duelo ante Cabo Verde</h3>
-<p><em>Deporte</em></p>
-<div style="text-align: center;">
-<img src="benbrereton.jpg" width="300">
-</div>
-<p>La Selección Chilena se impuso a Cabo Verde por la FIFA Series y Ben Brereton fue protagonista del encuentro, acrecentando su registro goleador jugando por La Roja. 
-El delantero del Derby County, que fue titular y tuvo un buen cometido, abrió la cuenta para los nacionales en los 16 minutos, tras una gran habilitación de Rodrigo Echeverría.
-Ese tanto le permitió a Brereton llegar a 10 gritos sagrados con La Roja (6 de ellos en amistosos y 4 en duelos por los puntos) en 41 partidos.
-De esta manera, el ariete sigue aumentando su cuota goleadora defendiendo a Chile.
+<div class="contenedor-articulos">
 
+  <article class="articulo">
+    <h3>Fútbol chileno: Ben Brereton aumentó su registro goleador jugando con La Roja en el duelo ante Cabo Verde</h3>
+    <img src="benbrereton.jpg" width="100%">
+    <p>La Selección Chilena se impuso a Cabo Verde por la FIFA Series y Ben Brereton fue protagonista del encuentro, acrecentando su registro goleador jugando por La Roja. 
+    El delantero del Derby County, que fue titular y tuvo un buen cometido, abrió la cuenta para los nacionales en los 16 minutos, tras una gran habilitación de Rodrigo Echeverría.
+    Ese tanto le permitió a Brereton llegar a 10 gritos sagrados con La Roja (6 de ellos en amistosos y 4 en duelos por los puntos) en 41 partidos.
+    De esta manera, el ariete sigue aumentando su cuota goleadora defendiendo a Chile.</p>
+  </article>
+
+  <article class="articulo">
+    <h3>Tenis internacional: Miami Open finaliza con Aryna Sabalenka como su ganadora</h3>
+    <img src="arynavscoco.jpg" width="100%">
+    <p>Aryna Sabalenka, número 1 de la WTA, es la dueña del tenis femenino. Con un gran nivel desplegado, superó a Coco Gauff (4ª) por 6-2,
+    4-6 y 6-3 en la final del Miami Open para conquistar su decimoprimer WTA 1000 y adueñarse del Sunshine Double, tras el título que consiguió recientemente en Indian Wells.
+    Esta es la primer final que pierde Gauff sobre canchas duras. La estadounidense había llegado a Florida con un categórico 9-0 en este rubro tras sus consagraciones en Linz (2019),
+    Auckland (2023), Washington (2023), Cincinnati (2023), US Open (2023), Auckland (2024), Beijing (2024), WTA Finals (2024), Wuhan (2025).</p>
+  </article>
+
+  <article class="articulo">
+    <h3>MLB y Juegos Olímpicos</h3>
+    <img src="mlb.png" width="100%">
+    <p>Una huelga que provoque la cancelación de juegos durante la temporada 2027 de las Grandes Ligas podría alterar los planes para que los jugadores de MLB
+    participen en los Juegos Olímpicos de Los Ángeles 2028. Los seguros y las condiciones laborales de los jugadores siguen siendo cuestiones que deben resolverse para que los
+    jugadores de la MLB puedan participar en los Juegos Olímpicos. En el Clásico Mundial de Beisbol, los costos se dividen proporcionalmente entre los accionistas: la MLB y el 
+    sindicato tienen participaciones iguales, que son las mayores, y la WBSC, la Liga Japonesa de Beisbol Profesional y la Organización Coreana de Beisbol también poseen participaciones 
+    minoritarias.
 </p>
-</td></tr>
+  </article>
 
-<tr><td>
-<h3>Tenis internacional: Miami Open finaliza con Aryna Sabalenka como su ganadora</h3>
-<p><em>Deporte</em></p>
-<div style="text-align: center;">
-<img src="arynavscoco.jpg" width="300">
 </div>
-<p>Aryna Sabalenka, número 1 de la WTA, es la dueña del tenis femenino. Con un gran nivel desplegado, superó a Coco Gauff (4ª) por 6-2,
-4-6 y 6-3 en la final del Miami Open para conquistar su decimoprimer WTA 1000 y adueñarse del Sunshine Double, tras el título que consiguió recientemente en Indian Wells.
-Esta es la primer final que pierde Gauff sobre canchas duras. La estadounidense había llegado a Florida con un categórico 9-0 en este rubro tras sus consagraciones en Linz (2019),
-Auckland (2023), Washington (2023), Cincinnati (2023), US Open (2023), Auckland (2024), Beijing (2024), WTA Finals (2024), Wuhan (2025).</p>
-</td></tr>
-
-<tr><td>
-<h3>Juegos Olímpicos</h3>
-<p><em>Internacional: MLBPA: huelga en 2027 podría afectar a los Juegos Olímpicos </em></p>
-<div style="text-align: center;">
-<img src="mlb.png" width="300">
-</div>
-<p>Una huelga que provoque la cancelación de juegos durante la temporada 2027 de las Grandes Ligas podría alterar los planes para que los jugadores de MLB
-participen en los Juegos Olímpicos de Los Ángeles 2028. Los seguros y las condiciones laborales de los jugadores siguen siendo cuestiones que deben resolverse para que los
-jugadores de la MLB puedan participar en los Juegos Olímpicos. En el Clásico Mundial de Beisbol, los costos se dividen proporcionalmente entre los accionistas: la MLB y el 
-sindicato tienen participaciones iguales, que son las mayores, y la WBSC, la Liga Japonesa de Beisbol Profesional y la Organización Coreana de Beisbol también poseen participaciones 
-minoritarias.</p>
-</td></tr>
-</table>
-
-</section>
 
 </main>
 
 <footer>
-<p>© 2026 | El Faro</p>
+  <p>© 2026 | El Faro</p>
 </footer>
 
 </body>
