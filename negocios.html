@@ -2,95 +2,143 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Periódico El Faro - Negocios</title>
+<title>Negocios</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 <style>
-body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
-header { background: white; text-align: center; padding: 20px; border-bottom: 1px solid #ddd; }
-nav { text-align: center; padding: 10px; background: #222; }
-nav a { color: white; margin: 0 15px; text-decoration: none; }
-main { width: 90%; max-width: 1000px; margin: auto; }
-section { background: white; margin: 20px 0; padding: 20px; border-radius: 5px; }
-table { width: 100%; border-collapse: collapse; }
-td { border: 1px solid #ddd; padding: 15px; }
-h3 { margin-bottom: 5px; }
-em { color: gray; }
-footer { text-align: center; padding: 20px; background: #222; color: white; }
-</style>
 
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+header {
+  background: white;
+  text-align: center;
+  padding: 20px;
+}
+
+nav {
+  background: #222;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: underline;
+}
+
+nav a: hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+.contenedor-articulos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.articulo {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.articulo: hover {
+  background: black;
+  color: white;
+}
+
+footer {
+  background: #c9d2d0;
+  color: #31231e;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .contenedor-articulos {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <img src="faro.png" width="300">
-    <h1>Periódico El Faro</h1>
+  <img src="faro.png" width="300">
+  <h1>Periódico El Faro</h1>
 </header>
 
 <nav>
-    <a href="index.html">Inicio</a>
-    <a href="deporte.html">Deporte</a>
-    <a href="negocios.html">Negocios</a>
+  <a href="index.html">Inicio</a>
+  <a href="deporte.html">Deporte</a>
+  <a href="negocios.html">Negocios</a>
 </nav>
 
 <main>
 
-<section>
 <h2>Negocios</h2>
 
-<table>
-    
-<tr><td>
-<h3>Mujer Emprende: conoce el programa que potencia tu negocio ¿Cómo postular y cuáles son los requisitos?</h3>
-<p><em>Negocios</em></p>
-<div style="text-align: center;">
-<img src="mujeremprende.jpg" width="300">
-</div>
-<p>Programa Mujer Emprende, iniciativa que busca fortalecer los negocios de emprendedoras mediante capacitaciones y espacios para ampliar sus redes.
-En total se trata de 1.500 vacantes que están dirigidas a mujeres cuyo emprendimiento tenga al menos 1 año de funcionamiento.
-El programa comenzará en marzo próximo y se extenderá hasta diciembre de 2026.
-Academia Mujer Emprende: entrega capacitación asincrónica de 40 horas, que busca profesionalizar los emprendimientos liderados por mujeres, 
-desarrollando contenidos transversales y específicos como innovación, uso de tecnologías, marketing, modelo de negocio, atención al cliente, entre otros, 
-desde un enfoque de género y de gestión de sus emprendimientos.</p>
-</td></tr>
+<div class="contenedor-articulos">
 
-<tr><td>
-<h3>Innovación tecnológica: Startup chilena de venta de equipos reacondicionados ingresó a la selecta red mundial de Endeavor</h3>
-<p><em>Tecnología</em></p>
-<div style="text-align: center;">
-<img src="startup.png" width="300">
-</div>
-<p>Liderada por dos jóvenes emprendedores chilenos, Reuse está transformando el acceso a la tecnología en la región, impactando el mercado de
-electrónicos reacondicionados en Chile, México y Perú. omo emprendedores Endeavor, José Tomás Ulloa y Max Sateler (los fundadores de Reuse) ingresan 
-a una red global de más de 3 mil emprendedores y mentores, disponibles para ayudarlos a enfrentar sus desafíos de escalamiento a través de las redes y las experiencias. 
-Por ejemplo, Mercado Libre en Argentina, Cabify en España, o en Chile Buk y Cornershop.
-La empresa, presente en Chile, Perú y México, opera con procesos estandarizados de diagnóstico, reacondicionamiento y certificación, además de ofrecer períodos de prueba
-de 30 días y garantías de hasta 13 meses, fortaleciendo la confianza en este tipo de productos y facilitando su adopción a gran escala.
+  <article class="articulo">
+    <h3>Mujer Emprende: conoce el programa que potencia tu negocio ¿Cómo postular y cuáles son los requisitos?</h3>
+    <p><em>Negocios</em></p>
+    <img src="mujeremprende.jpg" width="100%">
+    <p>Programa Mujer Emprende, iniciativa que busca fortalecer los negocios de emprendedoras mediante capacitaciones y espacios para ampliar sus redes.
+    En total se trata de 1.500 vacantes que están dirigidas a mujeres cuyo emprendimiento tenga al menos 1 año de funcionamiento.
+    El programa comenzará en marzo próximo y se extenderá hasta diciembre de 2026.
+    Academia Mujer Emprende: entrega capacitación asincrónica de 40 horas, que busca profesionalizar los emprendimientos liderados por mujeres, 
+    desarrollando contenidos transversales y específicos como innovación, uso de tecnologías, marketing, modelo de negocio, atención al cliente, entre otros, 
+    desde un enfoque de género y de gestión de sus emprendimientos.</p>
+  </article>
+
+  <article class="articulo">
+    <h3>Innovación tecnológica: Startup chilena de venta de equipos reacondicionados ingresó a la selecta red mundial de Endeavor</h3>
+    <p><em>Tecnología</em></p>
+    <img src="startup.png" width="100%">
+    <p>Liderada por dos jóvenes emprendedores chilenos, Reuse está transformando el acceso a la tecnología en la región, impactando el mercado de
+    electrónicos reacondicionados en Chile, México y Perú. omo emprendedores Endeavor, José Tomás Ulloa y Max Sateler (los fundadores de Reuse) ingresan 
+    a una red global de más de 3 mil emprendedores y mentores, disponibles para ayudarlos a enfrentar sus desafíos de escalamiento a través de las redes y las experiencias. 
+    Por ejemplo, Mercado Libre en Argentina, Cabify en España, o en Chile Buk y Cornershop.
+    La empresa, presente en Chile, Perú y México, opera con procesos estandarizados de diagnóstico, reacondicionamiento y certificación, además de ofrecer períodos de prueba
+    de 30 días y garantías de hasta 13 meses, fortaleciendo la confianza en este tipo de productos y facilitando su adopción a gran escala.
 </p>
-</td></tr>
+  </article>
 
+  <article class="articulo">
+    <h3>Mercado financiero: Wall Street abrió en rojo mientras el petróleo sigue subiendo por guerra en Medio Oriente</h3>
+    <p><em>Finanzas</em></p>
+    <img src="wallstreet.jpg" width="100%">
+    <p>Wall Street abrió este viernes en rojo y su principal indicador, el Dow Jones de Industriales, cayó un 0,83 %, mientras el precio del petróleo de referencia en Estados Unidos 
+    sigue subiendo por la continuidad de la guerra en Oriente Medio y el aparente bloqueo en las negociaciones para que cesen las hostilidades.
+    A la apertura del parqué neoyorquino, el Dow Jones perdía 380 puntos; el selectivo S&P 500 bajaba un 0,69 %, hasta los 6.432 enteros; y el tecnológico Nasdaq perdía un 0,82 %, 
+    hasta las 21.232 unidades.
+    El precio del petróleo intermedio de Texas (WTI, por sus siglas en inglés) subía al inicio de la jornada un 2,55 %, hasta los 96,89 dólares el barril.
 
-<tr><td>
-<h3>Mercado financiero: Wall Street abrió en rojo mientras el petróleo sigue subiendo por guerra en Medio Oriente</h3>
-<p><em>Finanzas</em></p>
-<div style="text-align: center;">
-<img src="wallstreet.jpg" width="300">
+.</p>
+  </article>
+
 </div>
-<p>Wall Street abrió este viernes en rojo y su principal indicador, el Dow Jones de Industriales, cayó un 0,83 %, mientras el precio del petróleo de referencia en Estados Unidos 
-sigue subiendo por la continuidad de la guerra en Oriente Medio y el aparente bloqueo en las negociaciones para que cesen las hostilidades.
-A la apertura del parqué neoyorquino, el Dow Jones perdía 380 puntos; el selectivo S&P 500 bajaba un 0,69 %, hasta los 6.432 enteros; y el tecnológico Nasdaq perdía un 0,82 %, 
-hasta las 21.232 unidades.
-El precio del petróleo intermedio de Texas (WTI, por sus siglas en inglés) subía al inicio de la jornada un 2,55 %, hasta los 96,89 dólares el barril.</p>
-</td></tr>
-
-</table>
-    
-</section>
 
 </main>
 
 <footer>
-<p>© 2026 | El Faro</p>
+  <p>© 2026 | El Faro</p>
 </footer>
 
 </body>
