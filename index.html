@@ -23,6 +23,12 @@ header {
   padding: 20px;
 }
 
+#reloj {
+  background: white;
+  text-align: center;
+  padding: 20px;
+}
+  
 /* Menú de navegación */
 nav {
   background: #222;
@@ -78,6 +84,41 @@ footer {
   padding: 20px;
 }
 
+/* SECCIONES */
+.seccion {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+}
+
+/* FORMULARIOS */
+.formulario {
+  max-width: 400px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 15px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover{
+  background: #444;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .contenedor-articulos {
@@ -94,6 +135,7 @@ footer {
 <header>
   <img src="faro.png" width="300">
   <h1>Periódico El Faro</h1>
+  <p id="reloj"></p>
 </header>
 
 <!-- Navegación -->
@@ -107,6 +149,17 @@ footer {
 
 <!-- Sección de noticias -->
 <h2>Noticias Generales</h2>
+
+<p>Total de artículos: <span id="contador">0</span></p>
+
+<div class="seccion">
+  <div class="formulario">
+    <h3>Agregar nuevo artículo</h3>
+    <input type="text" id="titulo" placeholder="Título del artículo">
+    <input type="text" id="descripcion" placeholder="Descripción">
+    <button onclick="agregarArticulo()">Agregar</button>
+  </div>
+</div>
 
 <div class="contenedor-articulos">
 
@@ -165,12 +218,81 @@ footer {
 
 </div>
 
+<div class="seccion">
+  <div class="formulario"<
+    <h2>Contacto</h2>
+    <input type="text" id="nombre" placeholder="Nombre">
+    <textarea id="mensaje" placeholder="Mensaje"></textarea>
+    <button onclick="enviarMensaje()">Enviar</button>
+  </div>
+</div>
+  
+
 </main>
 
 <!-- Footer -->
 <footer>
   <p>© 2026 | El Faro</p>
 </footer>
+
+<script>
+  function actualizarReloj() {
+    const ahora = new Date();
+    document.getElementbyId("reloj").textContent =
+      ahora.toLocaleDateString() + " - " + ahora.toLocaleTimeString()
+  }
+  setInterval(actualizarReloj, 1000);
+  actualizarReloj();
+
+function actualizarContador();
+    const total = document.querySelectorAll(".articulo").length;
+  document.getElementById("contador").textContent = total;
+}
+actualizarContador();
+
+function agregarArticulo() {
+  const titulo = document.getElementById("titulo").value;
+  const descripcion = document.getElementById("descripcion").value;
+
+  if (titulo === "" || descripcion === "") {
+    alert("Completa los campos");
+    return;
+  }
+
+  const contenedor = document.getElementById("contenedor");
+
+  const nuevo = document.createElement("article");
+  nuevo.classList.add("articulo");
+
+  nuevo.innerHTML = `
+    <h3>${titulo}</h3>
+    <p><em>Nuevo</em></p>
+    <p>${descripcion}</p>
+  `;
+
+  contenedor.appendChild(nuevo);
+  actualizarContador();
+
+  document.getElementById("titulo").value = "";
+  document.getElementById("descripcion").value = "";
+}
+
+function enviarMensaje() {
+  const nombre = document.getElementById("nombre").value;
+  const mensaje = document.getElementById("mensaje").value;
+
+  if (nombre === "" || mensaje === "") {
+    alert("Completa los campos");
+    return;
+  }
+
+  alert("Mensaje enviado correctamente");
+
+  document.getElementById("nombre").value = "";
+  document.getElementById("mensaje").value = "";
+}
+  
+</script>
 
 </body>
 </html>
