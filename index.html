@@ -135,7 +135,7 @@ button:hover{
 <header>
   <img src="faro.png" width="300">
   <h1>Periódico El Faro</h1>
-  <p id="reloj"></p>
+  <p id="reloj">Cargando hora...</p>
 </header>
 
 <!-- Navegación -->
@@ -161,7 +161,7 @@ button:hover{
   </div>
 </div>
 
-<div class="contenedor-articulos">
+<div class="contenedor-articulos" id="contenedor">
 
   <!-- Artículo 1 -->
   <article class="articulo">
@@ -236,25 +236,39 @@ button:hover{
 </footer>
 
 <script>
+
+window.onload = function() {
+  iniciarReloj();
+  actualizarContador();
+};
+  
+/* RELOJ */
+function iniciarReloj() {
   function actualizarReloj() {
     const ahora = new Date();
-    document.getElementbyId("reloj").textContent =
-      ahora.toLocaleDateString() + " - " + ahora.toLocaleTimeString()
+    const reloj = document.getElementById("reloj");
+    if (reloj) {
+      reloj.textContent =
+        ahora.toLocaleDateString() + " - " + ahora.toLocaleTimeString();
+    }
   }
-  setInterval(actualizarReloj, 1000);
-  actualizarReloj();
 
-function actualizarContador();
-    const total = document.querySelectorAll(".articulo").length;
+  actualizarReloj();
+  setInterval(actualizarReloj, 1000);
+}
+
+/* CONTADOR */
+function actualizarContador() {
+  const total = document.querySelectorAll(".articulo").length;
   document.getElementById("contador").textContent = total;
 }
-actualizarContador();
 
+/* AGREGAR ARTÍCULO */
 function agregarArticulo() {
   const titulo = document.getElementById("titulo").value;
   const descripcion = document.getElementById("descripcion").value;
 
-  if (titulo === "" || descripcion === "") {
+  if (titulo.trim() === "" || descripcion.trim() === "") {
     alert("Completa los campos");
     return;
   }
@@ -271,17 +285,19 @@ function agregarArticulo() {
   `;
 
   contenedor.appendChild(nuevo);
+
   actualizarContador();
 
   document.getElementById("titulo").value = "";
   document.getElementById("descripcion").value = "";
 }
 
+/* CONTACTO */
 function enviarMensaje() {
   const nombre = document.getElementById("nombre").value;
   const mensaje = document.getElementById("mensaje").value;
 
-  if (nombre === "" || mensaje === "") {
+  if (nombre.trim() === "" || mensaje.trim() === "") {
     alert("Completa los campos");
     return;
   }
