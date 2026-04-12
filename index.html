@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Periódico El Faro - Inicio</title>
+
+<!-- Tipografía externa -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+
+/* Estilo general del sitio */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+/* Encabezado */
+header {
+  background: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Menú de navegación */
+nav {
+  background: #222;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Links normales */
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: underline;
+}
+
+/* Hover en links */
+nav a: hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Contenedor principal */
+main {
+  width: 90%;
+  margin: auto;
+}
+
+/* Contenedor de artículos en GRID */
+.contenedor-articulos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Estilo de cada artículo */
+.articulo {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Hover en artículos */
+.articulo:hover {
+  background: black;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background: #c9d2d0;
+  color: #31231e;
+  text-align: center;
+  padding: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contenedor-articulos {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Encabezado -->
+<header>
+  <img src="faro.png" width="300">
+  <h1>Periódico El Faro</h1>
+</header>
+
+<!-- Navegación -->
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="deporte.html">Deporte</a>
+  <a href="negocios.html">Negocios</a>
+</nav>
+
+<main>
+
+<!-- Sección de noticias -->
+<h2>Noticias Generales</h2>
+
+<div class="contenedor-articulos">
+
+  <!-- Artículo 1 -->
+  <article class="articulo">
+    <h3>Crisis climática en Chile: ¿qué tanto nos afecta el cambio climático actualmente?</h3>
+    <p><em>Medioambiente</em></p>
+    <img src="crisisclimatica.jpg" width="100%">
+    <p>Chile es reconocido a nivel mundial como uno de los territorios más vulnerables al cambio climático debido a su extensa diversidad climática
+      y geografía longitudinal (René Garreaud y otros autores, 2017). El país alberga al menos siete de los principales tipos de clima del mundo, desde
+      el desierto de Atacama en el norte, uno de los más áridos del planeta, hasta el clima templado lluvioso del sur y los climas fríos de la Patagonia
+      y la Antártica (Dirección Meteorológica de Chile (DMC), 2023). Considerando la gravedad de los efectos del cambio climático, diversas instancias sociocientíficas
+      no solo han identificado sus impactos, sino que también han impulsado acciones para mitigarlos y adaptarse a ellos. Más allá del invaluable trabajo que realizan centros
+      de investigación, entidades gubernamentales y organizaciones de la sociedad civil, el factor clave y determinante radica en la Educación Ambiental para el cambio climático.
+</p>
+  </article>
+
+  <!-- Artículo 2 -->
+  <article class="articulo">
+    <h3>Educación digital en debate: ¿cómo manejar la nueva restricción del uso de celulares?</h3>
+    <p><em>Educación</em></p>
+    <p>Llegó marzo y con ello la vuelta a clases en los colegios y liceos del país. Pero este año es diferente a los anteriores, ya que está rigiendo la ley que regula
+      el uso de celulares y otros dispositivos móviles dentro de los establecimientos educacionales, tanto en los públicos como en los privados. Cabe mencionar que la ley
+      ya establece algunas excepciones: cuando se requiera ayuda técnica acreditada por un profesional; emergencia o catástrofe; situaciones de desastre o peligro inmediato;
+      condición de salud; monitoreo médico periódico acreditado por certificado; uso pedagógico, sólo para básica y media, si la actividad lo requiere; seguridad personal;
+      solicitud fundada del apoderado en forma temporal.</p>
+
+   <!-- Video adaptado para mejor visibilidad en dispositivos -->
+  <video width="100%" controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  
+  <p><small>Fuente: Meganoticias</small></p>
+    
+  </article>
+
+  <!-- Artículo 3 -->
+  <article class="articulo">
+    <h3>The Pitt: La nueva serie que busca representar la realidad del sistema de salud.</h3>
+    <p><em>Salud</em></p>
+    <img src="thepitt.jpg" width="100%">
+    <p>Ganadora de varios premios Emmy, The Pitt —disponible a través de HBO Max— construyó una base de seguidores muy fiel desde su estreno en Estados Unidos en 2025.
+      Desde entonces, el entusiasmo del público no ha dejado de crecer. En redes sociales abundan los memes inspirados en la serie y, fuera de la pantalla, muchos fans incluso
+      gritan frases del programa cuando se cruzan con los actores en las calles de Los Ángeles. Pero el fenómeno va más allá del entretenimiento, porque también abrió espacio para
+      hablar de temas de salud que suelen quedar fuera del debate público. A lo largo de sus episodios, la serie aborda cuestiones como la donación de órganos, la demencia y los riesgos
+      asociados con algunas tendencias de belleza que circulan en TikTok. Escucha el adelanto de la temporada a continuación:</p>
+    
+  <!-- Audio adaptado -->
+  <audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+  </audio>
+    
+  <p><small>Fuente: Warner Channel</small></p>
+
+  </article>
+
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 | El Faro</p>
+</footer>
+
+</body>
+</html>
