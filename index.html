@@ -94,6 +94,7 @@ footer {
 <header>
   <img src="faro.png" width="300">
   <h1>Periódico El Faro</h1>
+  <p id="reloj"></p>
 </header>
 
 <!-- Navegación -->
@@ -107,6 +108,14 @@ footer {
 
 <!-- Sección de noticias -->
 <h2>Noticias Generales</h2>
+<p>Total de artículos: <span id="contador">0</span></p>
+
+<h3>Agregar nuevo artículo</h3>
+<input type="text" id="titulo" placeholder="Título del artículo"><br><br>
+<input type="text" id="descripcion" placeholder="Descripción"><br><br>
+<button onclick="agregarArticulo()">Agregar</button>
+
+<div class="contenedor-articulos" id="contenedor">
 
 <div class="contenedor-articulos">
 
@@ -164,13 +173,73 @@ footer {
   </article>
 
 </div>
-
+<h2>Contacto</h2>
+<input type="text" id="nombre" placeholder="Nombre"><br><br>
+<textarea id="mensaje" placeholder="Mensaje"></textarea><br><br>
+<button onclick="enviarMensaje()">Enviar</button>
 </main>
 
 <!-- Footer -->
 <footer>
   <p>© 2026 | El Faro</p>
 </footer>
+  
+<script>
+function actualizarReloj() {
+  const ahora = new Date();
+  document.getElementById("reloj").textContent =
+    ahora.toLocaleDateString() + " - " + ahora.toLocaleTimeString();
+}
+setInterval(actualizarReloj, 1000);
+actualizarReloj();
 
+function actualizarContador() {
+  const total = document.querySelectorAll(".articulo").length;
+  document.getElementById("contador").textContent = total;
+}
+actualizarContador();
+
+function agregarArticulo() {
+  const titulo = document.getElementById("titulo").value;
+  const descripcion = document.getElementById("descripcion").value;
+
+  if (titulo === "" || descripcion === "") {
+    alert("Completa los campos");
+    return;
+  }
+
+  const contenedor = document.getElementById("contenedor");
+
+  const nuevo = document.createElement("article");
+  nuevo.classList.add("articulo");
+
+  nuevo.innerHTML = `
+    <h3>${titulo}</h3>
+    <p><em>Nuevo</em></p>
+    <p>${descripcion}</p>
+  `;
+
+  contenedor.appendChild(nuevo);
+  actualizarContador();
+
+  document.getElementById("titulo").value = "";
+  document.getElementById("descripcion").value = "";
+}
+
+function enviarMensaje() {
+  const nombre = document.getElementById("nombre").value;
+  const mensaje = document.getElementById("mensaje").value;
+
+  if (nombre === "" || mensaje === "") {
+    alert("Completa los campos");
+    return;
+  }
+
+  alert("Mensaje enviado correctamente");
+
+  document.getElementById("nombre").value = "";
+  document.getElementById("mensaje").value = "";
+}
+</script>
 </body>
 </html>
