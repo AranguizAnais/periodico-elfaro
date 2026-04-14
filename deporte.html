@@ -21,6 +21,12 @@ header {
   padding: 20px;
 }
 
+#reloj {
+  background: white;
+  text-align: center;
+  padding: 20px;
+}
+
 nav {
   background: #222;
   text-align: center;
@@ -69,6 +75,43 @@ footer {
   padding: 20px;
 }
 
+/* SECCIONES*/
+
+.seccion {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+}
+
+/* FORMULARIOS */
+
+.formulario {
+  max-width: 400px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 15px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button: hover{
+  background: #444;
+}
+  
 @media (max-width: 768px) {
   .contenedor-articulos {
     grid-template-columns: 1fr;
@@ -95,7 +138,18 @@ footer {
 
 <h2>Deporte</h2>
 
-<div class="contenedor-articulos">
+<p>Total de artículos: <span id="contador">0</span></p>
+
+<div class="seccion">
+  <div class="formulario">
+    <h3> Agregar nuevo artículo</h3>
+    <input type="text" id="titulo" placeholder="Título del artículo">
+    <input type="text" id="descripcion" placeholder="Descripción">
+    <button onclick="agregarArticulo()">Agregar</button>
+  </div>
+</div>
+  
+<div class="contenedor-articulos" id="contenedor">
 
   <article class="articulo">
     <h3>Fútbol chileno: Ben Brereton aumentó su registro goleador jugando con La Roja en el duelo ante Cabo Verde</h3>
@@ -136,6 +190,79 @@ footer {
 <footer>
   <p>© 2026 | El Faro</p>
 </footer>
+<script>
 
+window.onload = function() {
+  iniciarReloj();
+  actualizarContador();
+};
+  
+/* RELOJ */
+function iniciarReloj() {
+  function actualizarReloj() {
+    const ahora = new Date();
+    const reloj = document.getElementById("reloj");
+    if (reloj) {
+      reloj.textContent =
+        ahora.toLocaleDateString() + " - " + ahora.toLocaleTimeString();
+    }
+  }
+
+  actualizarReloj();
+  setInterval(actualizarReloj, 1000);
+}
+
+/* CONTADOR */
+function actualizarContador() {
+  const total = document.querySelectorAll(".articulo").length;
+  document.getElementById("contador").textContent = total;
+}
+
+/* AGREGAR ARTÍCULO */
+function agregarArticulo() {
+  const titulo = document.getElementById("titulo").value;
+  const descripcion = document.getElementById("descripcion").value;
+
+  if (titulo.trim() === "" || descripcion.trim() === "") {
+    alert("Completa los campos");
+    return;
+  }
+
+  const contenedor = document.getElementById("contenedor");
+
+  const nuevo = document.createElement("article");
+  nuevo.classList.add("articulo");
+
+  nuevo.innerHTML = `
+    <h3>${titulo}</h3>
+    <p><em>Nuevo</em></p>
+    <p>${descripcion}</p>
+  `;
+
+  contenedor.appendChild(nuevo);
+
+  actualizarContador();
+
+  document.getElementById("titulo").value = "";
+  document.getElementById("descripcion").value = "";
+}
+
+/* CONTACTO */
+function enviarMensaje() {
+  const nombre = document.getElementById("nombre").value;
+  const mensaje = document.getElementById("mensaje").value;
+
+  if (nombre.trim() === "" || mensaje.trim() === "") {
+    alert("Completa los campos");
+    return;
+  }
+
+  alert("Mensaje enviado correctamente");
+
+  document.getElementById("nombre").value = "";
+  document.getElementById("mensaje").value = "";
+}
+  
+</script>
 </body>
 </html>
